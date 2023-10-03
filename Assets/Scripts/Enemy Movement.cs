@@ -8,12 +8,17 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemySpeed = Random.Range(1, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(enemySpeed * Time.deltaTime, 0, 0);
+        Move();
+    }
+    void Move()
+    {
+
+    transform.Translate(Vector3.down * enemySpeed * Time.deltaTime, Space.World);
     }
 }

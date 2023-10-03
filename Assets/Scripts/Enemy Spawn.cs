@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public float screenHeight = 5;
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 1, 4);
+        InvokeRepeating("SpawnEnemy", 1, 2);
     }
 
     // Update is called once per frame
@@ -20,8 +20,11 @@ public class EnemySpawn : MonoBehaviour
     private void SpawnEnemy()
     { 
         float xCord = Random.Range(-screenWidth, screenWidth);
-        float yCord = Random.Range(-screenHeight, screenHeight);
+        
+        float yCord = Random.Range(10, screenHeight);
+        
         Vector2 spawnPoint = new Vector2 (xCord, yCord);
+        
         Instantiate(enemyPrefab, spawnPoint, Quaternion.identity); 
     }
 }
