@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     float xMove;
     public GameManager gameManager;
     [SerializeField] private AudioSource scoreSoundEffect;
-    [SerializeField] private AudioSource deathSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
