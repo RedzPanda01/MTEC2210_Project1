@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private AudioSource deathSoundEffect;
     public float enemySpeed = 5;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,12 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Move();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            deathSoundEffect.Play();
+        Destroy(collision.gameObject);
     }
     void Move()
     {

@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public float screenHeight = 5;
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 1, 2);
+        InvokeRepeating("SpawnEnemy", 1, 4);
     }
 
     // Update is called once per frame

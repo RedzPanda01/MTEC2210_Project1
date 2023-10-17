@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         xMove = Input.GetAxisRaw("Horizontal");
-        
+
     }
- 
-        private void FixedUpdate()
+
+    private void FixedUpdate()
     {
         rb.velocity = new Vector2(xMove, 0) * (speed * Time.deltaTime);
     }
@@ -31,19 +31,21 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //Debug.Log("Collided with: " + collision.gameObject.name);
-        if (collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
             scoreSoundEffect.Play();
             Destroy(collision.gameObject);
             gameManager.AddScore();
         }
-        if (collision.gameObject.tag == "Death")
+
+        if(collision.gameObject.tag == "Transition")
         {
-            Die();
+
+            print("Debug");
         }
     }
-        private void Die()
-        {
-            deathSoundEffect.Play();
-        }
-    }
+}
+
+
+ 
+  
